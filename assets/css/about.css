@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3rem;
+  --header-height: 4rem;
   /*========== Colors ==========*/
   --hue-color: 206;
   --black-color: hsl(var(--hue-color), 4%, 4%);
@@ -170,8 +170,6 @@ img {
 
 .nav__logo {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -213,6 +211,8 @@ img {
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
+  position: absolute;
+  left: 70%;
 }
 
 .nav__link {
@@ -425,6 +425,15 @@ img {
 /*=============== MEDIA QUERIES ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
+
+  .nav {
+    padding-right: 2rem;
+  }
+
+  .nav__logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .container {
     margin-left: var(--mb-1);
@@ -437,6 +446,14 @@ img {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
+  .nav {
+    padding-right: 2rem;
+  }
+
+  .nav__logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
   
 }
 
@@ -472,6 +489,16 @@ img {
 
 /* For large devices */
 @media screen and (min-width: 1024px) {
+
+  .nav {
+    padding-right: 0;
+  }
+
+  .nav__logo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .container {
     margin-left: auto;
     margin-right: auto;
