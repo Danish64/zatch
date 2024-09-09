@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3rem;
+  --header-height: 4rem;
   /*========== Colors ==========*/
   --hue-color: 206;
   --black-color: hsl(var(--hue-color), 4%, 4%);
@@ -171,10 +171,22 @@ img {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .nav__logo__img {
   width: 12rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+.nav__logo__text {
+  color: white;
+  font-family: bangers;
+  font-size: 14px;
+  letter-spacing: 8px;
 }
 
 .nav__toggle {
@@ -285,7 +297,7 @@ img {
 }
 .item .content{
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -295,6 +307,7 @@ img {
   font-family: system-ui;
   text-transform: uppercase;
   white-space: nowrap;
+  z-index: 16;
 }
 .item.active{
   display: block;
@@ -440,7 +453,7 @@ img {
 
 
 .banner{
-  height: 100vh;
+  height: 115vh;
   overflow: hidden;
   position: relative;
 }
@@ -477,13 +490,13 @@ img {
   transform: translateX(-50%);
 }
 .soda{
-  --left: 0px;
+  --left: -40px;
   background: 
       var(--url) var(--left),
       url(/assets/img/mockup.png) 0 0;
   background-size: auto 100%;
   width: 280px;
-  aspect-ratio: 2 / 4;
+  aspect-ratio: 0.403;
   background-blend-mode: multiply;
   transition: 0.8s;
   mask-image: url(/assets/img/mockup.png);
@@ -493,11 +506,11 @@ img {
   opacity: 0;
 }
 .product:hover{
-  bottom: 300px;
+  bottom: 250px;
 }
 .product:hover .soda:nth-child(2){
   opacity: 1;
-  --left: 575px;
+  --left: 675px;
 }
 .product:hover .soda:nth-child(1){
   opacity: 0;
@@ -693,19 +706,19 @@ img {
 }
 
 .specs__img__drinks {
-  --left: 0px;
+  --left: -28px;
   background: 
       var(--url) var(--left),
       url(/assets/img/mockup.png) 0 0;
   background-size: auto 100%;
-  aspect-ratio: 2 / 4;
+  aspect-ratio: 0.403;
   background-blend-mode: multiply;
   mask-image: url(/assets/img/mockup.png);
   mask-size: auto 100%;
 }
 
 .case__drink__img {
-  --left: -35px;
+  --left: -80px;
 }
 
 /*=============== CASE ===============*/
@@ -979,7 +992,7 @@ img {
     width: 130px;
     height: 270px;
     left: -1rem;
-    --left: -15px;
+    --left: -80px;
   }
   .case__data {
     padding: 0;
@@ -1087,6 +1100,7 @@ img {
   }
   .specs__img {
     width: 300px;
+    margin-left: 40px;
   }
   .case__container {
     column-gap: 5rem;
