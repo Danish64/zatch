@@ -41,7 +41,7 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 /*========== drinks ==========*/
-  --width-mockup: calc(371px / 1.5);
+  --width-mockup: calc(270px / 1.5);
     --height-mockup: calc(673px / 1.5);
 }
 
@@ -403,16 +403,42 @@ img {
   transform: translate(-50%, -50%);
   height: var(--height-mockup);
   width: var(--width-mockup);
+}
+
+.drink1 {
   background: 
-      url(/assets/img/carousel-img/mockup.png)  0 0 no-repeat, 
-      url(/assets/img/carousel-img/listSoda.png) var(--left) 0;
+  url(/assets/img/carousel-img/mockup.png)  0 0 no-repeat, 
+  url(/assets/img/drink1.png)  var(--left) 0;
   background-size: auto 100%;
   background-blend-mode: multiply;
   -webkit-mask-image: 
   url(/assets/img/carousel-img/mockup.png);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: auto 100%;
-  transition: background 0.5s;
+  transition: all 0.7s;
+}
+
+.drink2 {
+  background: 
+  url(/assets/img/carousel-img/mockup.png)  0 0 no-repeat, 
+  url(/assets/img/drink2.png)  var(--left) 0;
+  background-size: auto 100%;
+  background-blend-mode: multiply;
+  -webkit-mask-image: 
+  url(/assets/img/carousel-img/mockup.png);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: auto 100%;
+  transition: all 0.5s;
+}
+
+.animateDrink {
+  animation: scaleUpDown 0.5s ease-in  both;
+}
+
+@keyframes scaleUpDown {
+  0%   {transform: scale(1) rotate(-45deg) translate(-50%, -50%);}
+  50%  {transform: scale(1.2) rotate(45deg) translate(-50%, -50%);}
+  100% {transform: scale(1) rotate(0) translate(-50%, -50%);}
 }
 
 .leaves{
@@ -482,7 +508,7 @@ img {
   bottom: 170px;
   z-index: 2;
   width: 500px;
-  transition: 0.7s;
+  transition: all 1s;
 }
 .product .soda{
   position: absolute;
@@ -491,31 +517,34 @@ img {
   transform: translateX(-50%);
 }
 .soda{
-  --left: -40px;
+  --left: 0;
   background: 
       var(--url) var(--left),
       url(/assets/img/mockup.png) 0 0;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   width: 280px;
   aspect-ratio: 0.403;
   background-blend-mode: multiply;
-  transition: 0.8s;
+  transition: 1s;
   mask-image: url(/assets/img/mockup.png);
   mask-size: auto 100%;
+  transform: rotate(0) translateX(-50%);
 }
 .soda:nth-child(2){
   opacity: 0;
+  transform: rotate(0) translateX(-50%);
 }
 .product:hover{
   bottom: 250px;
 }
 .product:hover .soda:nth-child(2){
   opacity: 1;
-  --left: 675px;
+  transform: rotate(10deg) translateX(-50%);
+  /* --left: 555px; */
 }
 .product:hover .soda:nth-child(1){
   opacity: 0;
-  --left: 500px;
+  /* --left: 555px; */
 }
 
 .rock{
@@ -707,20 +736,17 @@ img {
 }
 
 .specs__img__drinks {
-  --left: -28px;
+  --left: 0;
   background: 
       var(--url) var(--left),
       url(/assets/img/mockup.png) 0 0;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   aspect-ratio: 0.403;
   background-blend-mode: multiply;
   mask-image: url(/assets/img/mockup.png);
   mask-size: auto 100%;
 }
 
-.case__drink__img {
-  --left: -80px;
-}
 
 /*=============== CASE ===============*/
 .case__container {

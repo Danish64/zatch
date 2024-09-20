@@ -8,7 +8,7 @@ let mockup = document.querySelector(".mockup");
 let count = list.length;
 let active = 0;
 let leftMockup = 0;
-let left_each_item = 100 / (list.length - 1);
+let left_each_item = 280 / (list.length - 1);
 
 next.onclick = () => {
   active = active >= count - 1 ? 0 : active + 1;
@@ -34,7 +34,15 @@ function changeCarousel() {
   // add class active in position active new
   list[active].classList.add("active");
   // change mockup background
-  mockup.style.setProperty("--left", leftMockup + "%");
+  if (mockup.classList.contains("drink1")) {
+    mockup.classList.remove("drink1", "animateDrink");
+    mockup.offsetWidth;
+    mockup.classList.add("drink2", "animateDrink");
+  } else {
+    mockup.classList.remove("drink2", "animateDrink");
+    mockup.offsetWidth;
+    mockup.classList.add("drink1", "animateDrink");
+  }
 
   clearInterval(refreshInterval);
   refreshInterval = setInterval(() => {
@@ -45,4 +53,4 @@ function changeCarousel() {
 // auto run 3s
 let refreshInterval = setInterval(() => {
   next.click();
-}, 5000);
+}, 3000);
